@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sahla & Nabeel — Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+--cream: #f5f0e8;
+--warm-white: #faf8f4;
+--gold: #b8965a;
+--gold-light: #d4b07a;
+--dark: #1a1612;
+--text: #3a3028;
+--muted: #8a7968;
+}
+
+html { scroll-behavior: smooth; }
+
+body { font-family: 'Jost', sans-serif; background: var(--warm-white); color: var(--text); overflow-x: hidden; }
+
+/* HERO */
+.hero { position: relative; width: 100%; height: 100vh; min-height: 600px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+
+.hero-bg {
+position: absolute; inset: 0;
+background: linear-gradient(to bottom, rgba(20,15,10,0.55) 0%, rgba(20,15,10,0.35) 45%, rgba(20,15,10,0.65) 100%),
+url('wedding-photo.jpeg') center/cover no-repeat;
+transform: scale(1.04);
+animation: zoomOut 14s ease-out forwards;
+}
+
+@keyframes zoomOut { from { transform: scale(1.04); } to { transform: scale(1.00); } }
+
+.hero-year {
+position: absolute; bottom: -2vw; left: 50%; transform: translateX(-50%);
+font-family: 'Cormorant Garamond', serif; font-size: clamp(100px, 22vw, 300px); font-weight: 300;
+color: rgba(255,255,255,0.07); letter-spacing: -0.02em; white-space: nowrap; pointer-events: none; user-select: none;
+}
+
+.hero-content { position: relative; text-align: center; color: #fff; padding: 0 24px; animation: fadeUp 1.2s ease 0.4s both; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+.hero-dear { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(11px,1.5vw,13px); letter-spacing: 0.35em; text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 12px; display: block; }
+
+.hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px,11vw,150px); font-weight: 300; line-height: 0.92; letter-spacing: -0.01em; margin-bottom: 28px; }
+
+.hero-name em { font-style: italic; color: var(--gold-light); }
+
+.hero-tagline { font-family: 'Jost', sans-serif; font-weight: 300; font-size: clamp(12px,1.5vw,14px); letter-spacing: 0.08em; color: rgba(255,255,255,0.7); margin-bottom: 40px; line-height: 1.8; }
+
+.hero-btn { display: inline-flex; align-items: center; gap: 12px; border: 1px solid rgba(255,255,255,0.4); color: #fff; padding: 14px 32px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; cursor: pointer; background: transparent; }
+
+.hero-btn:hover { background: rgba(184,150,90,0.2); border-color: var(--gold-light); }
+
+.hero-btn svg { width: 16px; height: 16px; }
+
+.hero-scroll { position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.45); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; animation: float 2.5s ease-in-out infinite; }
+
+@keyframes float { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(7px); } }
+
+.hero-scroll::after { content: ''; width: 1px; height: 38px; background: linear-gradient(to bottom, rgba(255,255,255,0.45), transparent); }
+
+/* ORNAMENT */
+.ornament { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 0 24px; }
+
+.ornament-line { flex: 1; max-width: 110px; height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
+
+.ornament-line.rev { background: linear-gradient(to left, transparent, var(--gold)); }
+
+.ornament-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; }
+
+.ornament-dot { width: 4px; height: 4px; background: var(--gold-light); transform: rotate(45deg); flex-shrink: 0; }
+
+/* SECTIONS */
+section { padding: 48px clamp(20px,6vw,80px); }
+
+.section-label { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
+
+/* FAMILY */
+.family-section { background: var(--warm-white); text-align: center; position: relative; overflow: hidden; }
+
+.family-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+
+.bismi { font-size: clamp(18px,2.5vw,24px); color: var(--gold); opacity: 0.4; margin-bottom: 24px; display: block; font-family: 'Cormorant Garamond', serif; }
+
+.family-intro { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 8px; line-height: 1.7; }
+
+.family-parents { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3vw,30px); font-weight: 500; color: var(--dark); line-height: 1.2; margin-bottom: 4px; }
+
+.family-address { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 20px; }
+
+.family-request { font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 300; color: var(--text); max-width: 540px; margin: 0 auto 24px; line-height: 1.8; }
+
+.couple-name-bride { font-family: 'Great Vibes', cursive; font-size: clamp(42px,7vw,76px); color: var(--gold); line-height: 1.1; margin-bottom: 4px; }
+
+.couple-name-groom { font-family: 'Great Vibes', cursive; font-size: clamp(42px,7vw,76px); color: var(--dark); line-height: 1.1; margin-bottom: 4px; }
+
+.couple-note { font-family: 'Jost', sans-serif; font-size: 12px; font-weight: 300; color: var(--muted); letter-spacing: 0.05em; line-height: 1.65; max-width: 480px; margin: 2px auto 0; }
+
+.and-word { font-family: 'Cormorant Garamond', serif; font-size: clamp(20px,3vw,34px); font-weight: 300; font-style: italic; color: var(--gold); display: block; margin: 14px 0; line-height: 1; }
+
+/* EVENT */
+.event-section { background: var(--dark); text-align: center; color: #fff; position: relative; overflow: hidden; }
+
+.event-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(184,150,90,0.12) 0%, transparent 65%), radial-gradient(ellipse 60% 40% at 50% 100%, rgba(184,150,90,0.07) 0%, transparent 65%); pointer-events: none; }
+
+.insha-allah { font-family: 'Great Vibes', cursive; font-size: clamp(36px,6vw,68px); color: var(--gold); line-height: 1.1; margin-bottom: 20px; display: block; }
+
+.event-date-wrap { display: flex; align-items: center; justify-content: center; gap: clamp(16px,4vw,48px); margin: 28px 0; flex-wrap: wrap; }
+
+.event-date-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px,10vw,96px); font-weight: 300; line-height: 1; color: #fff; }
+
+.event-date-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 4px; }
+
+.event-divider-v { width: 1px; height: 70px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+
+.event-day { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px,2vw,20px); font-weight: 300; font-style: italic; color: rgba(255,255,255,0.5); margin-bottom: 4px; display: block; }
+
+.event-time { font-family: 'Jost', sans-serif; font-weight: 200; font-size: clamp(26px,4.5vw,46px); letter-spacing: 0.12em; color: #fff; margin: 0 0 6px; }
+
+.event-time-note { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+
+.event-venue-label { font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; margin-top: 36px; display: block; }
+
+.event-venue-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px,4vw,40px); font-weight: 400; color: #fff; margin-bottom: 8px; }
+
+.event-venue-address { font-family: 'Jost', sans-serif; font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.05em; line-height: 1.7; }
+
+/* MAP */
+.map-section { background: var(--dark); padding: 0 clamp(20px,6vw,80px) 60px; text-align: center; }
+
+.map-container { width: 100%; max-width: 880px; margin: 0 auto; overflow: hidden; border: 1px solid rgba(184,150,90,0.18); box-shadow: 0 0 70px rgba(0,0,0,0.5); }
+
+.map-container iframe { display: block; width: 100%; height: 360px; border: none; filter: grayscale(20%) sepia(8%); }
+
+.directions-btn { display: inline-flex; align-items: center; gap: 10px; margin-top: 24px; border: 1px solid rgba(184,150,90,0.45); color: var(--gold-light); padding: 12px 28px; font-family: 'Jost', sans-serif; font-weight: 300; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+
+.directions-btn:hover { background: rgba(184,150,90,0.1); border-color: var(--gold); color: #fff; }
+
+/* FOOTER */
+footer { background: #110e0a; text-align: center; padding: 52px 24px; border-top: 1px solid rgba(184,150,90,0.12); }
+
+.footer-names { font-family: 'Great Vibes', cursive; font-size: clamp(30px,5vw,52px); color: var(--gold); margin-bottom: 12px; }
+
+.footer-dua { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,1.8vw,16px); color: rgba(255,255,255,0.28); letter-spacing: 0.04em; }
+
+.footer-date { font-family: 'Jost', sans-serif; font-size: 10px; color: rgba(255,255,255,0.12); margin-top: 26px; letter-spacing: 0.25em; }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.85s ease, transform 0.85s ease; }
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.d1 { transition-delay: 0.12s; } .d2 { transition-delay: 0.24s; } .d3 { transition-delay: 0.36s; } .d4 { transition-delay: 0.48s; }
+
+@media (max-width: 580px) {
+.event-divider-v { display: none; }
+.event-date-wrap { gap: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+<div class="hero-bg"></div>
+<div class="hero-year">2026</div>
+<div class="hero-content">
+<span class="hero-dear">Wedding Invitation</span>
+<h1 class="hero-name">Sahla<br><em>&amp; Nabeel</em></h1>
+<p class="hero-tagline">We joyfully invite you to witness the union of two hearts,<br>two families, and one beautiful beginning.</p>
+</div>
+<div class="hero-scroll">Scroll</div>
+</header>
+
+<!-- FAMILY SECTION -->
+<section class="family-section">
+<div style="max-width:720px;margin:0 auto;">
+<span class="bismi reveal">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+
+<div class="ornament reveal" style="margin-bottom:28px;">
+<div class="ornament-line"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-diamond"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-line rev"></div>
+</div>
+
+<span class="section-label reveal">With the blessings of Allah</span>
+<p class="family-intro reveal d1">Together with their families</p>
+<p class="family-parents reveal d2">Mr. Muhammed Feroc &amp; Mrs. Sareena</p>
+<p class="family-address reveal d2">Serene, Ayathil, Kollam, Kerala</p>
+<p class="family-request reveal d3">Solicit your blessings and gracious presence at the<br>wedding ceremony of their beloved daughter</p>
+
+<div class="reveal d4">
+<div class="couple-name-bride">Sahla Muhammed Feroc</div>
+<p class="couple-note">Granddaughter of Mr. Najumudeen Ahamed &amp; Mrs. Hafsa Najumudeen, Malika Veedu<br>and Late Mr. Abdul Vahab &amp; Mrs. Rahuma Beevi, Alamcode House</p>
+</div>
+
+<span class="and-word reveal">with</span>
+
+<div class="reveal d1">
+<div class="couple-name-groom">Nabeel Mohammed</div>
+<p class="couple-note">Son of Mr. Santhosh Haneefa &amp; Mrs. Saritha Aboobacker<br>Sana Manzil, Koorkenchery, Thrissur</p>
+</div>
+
+<div class="ornament reveal" style="margin-top:32px;">
+<div class="ornament-line"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-diamond"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-line rev"></div>
+</div>
+</div>
+</section>
+
+<!-- EVENT SECTION -->
+<section class="event-section" id="event">
+<div style="max-width:800px;margin:0 auto;position:relative;">
+<span class="insha-allah reveal">Insha Allah</span>
+
+<div class="ornament reveal" style="margin-bottom:0;">
+<div class="ornament-line" style="background:linear-gradient(to right,transparent,rgba(184,150,90,0.45));"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-diamond"></div>
+<div class="ornament-dot"></div>
+<div class="ornament-line rev" style="background:linear-gradient(to left,transparent,rgba(184,150,90,0.45));"></div>
+</div>
+
+<div class="event-date-wrap">
+<div class="reveal">
+<div class="event-date-num">09</div>
+<div class="event-date-label">Day</div>
+</div>
+<div class="event-divider-v reveal d1"></div>
+<div class="reveal d1">
+<div class="event-date-num">May</div>
+<div class="event-date-label">Month</div>
+</div>
+<div class="event-divider-v reveal d2"></div>
+<div class="reveal d2">
+<div class="event-date-num">2026</div>
+<div class="event-date-label">Year</div>
+</div>
+</div>
+
+<span class="event-day reveal">Saturday</span>
+<p class="event-time reveal d1">12:00</p>
+<span class="event-time-note reveal d2">Noon — Nikah Ceremony</span>
+
+<span class="event-venue-label reveal">Venue</span>
+<h2 class="event-venue-name reveal d1">Lalas Convention Center</h2>
+<p class="event-venue-address reveal d2">NH 66 Bypass Road, Opp. Kollam Medicity Hospital<br>Mevaram, Kollam, Kerala — 691020</p>
+</div>
+</section>
+
+<!-- MAP SECTION -->
+<div class="map-section">
+<div class="map-container reveal">
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d31326.89!2d76.6009761!3d8.8875358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x0%3A0x0!2s8.9063424%2C76.6083072!3m2!1d8.9063424!2d76.6083072!4m5!1s0x3b05fcb33fab35d9%3A0xa1ebe9912b15fa2d!2sLalas%20Convention%20Centre%2C%20NH%2066%20Bypass%20Rd%2C%20Opp%3A%20Kollam%20Medicity%20Hospital%2C%20Thattamala%2C%20Kollam%2C%20Kerala%20691020!3m2!1d8.8736475!2d76.6405271!5e0!3m2!1sen!2sin!4v1683000000000!5m2!1sen!2sin"
+allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+<a href="https://www.google.com/maps/dir/8.9063424,76.6083072/Lalas+Convention+Centre,+NH+66+Bypass+Rd,+Opp:+Kollam+Medicity+Hospital,+Thattamala,+Kollam,+Kerala+691020/@8.8875358,76.6009761,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b05fcb33fab35d9:0xa1ebe9912b15fa2d!2m2!1d76.6405271!2d8.8736475?entry=ttu&g_ep=EgoyMDI2MDMwMS4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="directions-btn reveal">
+<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+<circle cx="12" cy="9" r="2.5"/>
+</svg>
+Get Directions
+</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-names">Sahla &amp; Nabeel</div>
+<p class="footer-dua">May Allah bless this union with love, mercy and tranquility — آمين</p>
+<p class="footer-date">09 · 05 · 2026</p>
+</footer>
+
+<script>
+const io = new IntersectionObserver(entries => {
+entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
